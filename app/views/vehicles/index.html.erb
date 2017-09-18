@@ -1,0 +1,36 @@
+<div class="clearfix">
+  <div class="pull-left">
+    <h2 class="title">Vehicles</h2>
+  </div>
+    <%= link_to new_vehicle_path, class: "btn btn-default" do %>
+      Adicionar
+    <% end %>
+</div>
+
+<table class=" table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Model Name</th>
+      <th>Plate</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <td><%= image_tag vehicle.vehicle_model.avatar.url(:thumb) %></td>
+        <td><%= vehicle.vehicle_model.name %></td>
+        <td><%= vehicle.plate %></td>
+        <td><%= vehicle.year %></td>
+        <td><%= vehicle.color %></td>
+        <td><%= link_to fa_icon("Edit", class: "fa-pencil-square-o"), edit_vehicle_path(vehicle), class:"btn btn-default btn-xs" %>
+        <%= link_to fa_icon("Destroy", class: "fa-trash"), vehicle, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default btn-xs" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

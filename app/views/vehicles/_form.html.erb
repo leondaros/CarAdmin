@@ -1,0 +1,17 @@
+<%= simple_form_for(vehicle) do |f| %>
+  <div class="field form-group">
+    <%= f.input :plate ,class:"form-control"%>
+  </div>
+  <div class="field form-group">
+    <%= f.input :year, class:"form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.input :color, class:"form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.association :vehicle_model, collection: @vehicle_models%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Criar", class: "btn btn-primary"%>
+  </div>
+<% end %>
