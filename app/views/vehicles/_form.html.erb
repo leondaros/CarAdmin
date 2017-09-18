@@ -6,7 +6,7 @@
     <%= f.input :year, class:"form-control" %>
   </div>
   <div class="field form-group">
-    <%= f.input :color, class:"form-control" %>
+    <%= f.input :color, collection: ["Branco","Preto","Prata","Vermelho"], class:"form-control"%>
   </div>
   <div class="field form-group">
     <%= f.association :vehicle_model, collection: @vehicle_models%>

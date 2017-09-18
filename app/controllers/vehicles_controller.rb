@@ -8,6 +8,7 @@ class VehiclesController < ApplicationController
     @vehicles = Vehicle.by_plate @search
   end
 
+  
   # GET /vehicles/1
   # GET /vehicles/1.json
   def show

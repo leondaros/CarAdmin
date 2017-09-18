@@ -7,5 +7,4 @@ Rails.application.routes.draw do
   end
 
   root to: "vehicles#index"
-  #get 'vehicle/index'
 end
